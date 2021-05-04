@@ -68,12 +68,20 @@ describe('Park', function() {
     park.addDinosaur(dinosaurPelsarus)
     park.addDinosaur(dinosaurTrex02)
     park.addDinosaur(dinosaurTrex03)    
-    value = park.totalVisitorPerDay()
-    assert.strictEqual(value, 300)
+    perDayValue = park.totalVisitorPerDay()
+    assert.strictEqual(perDayValue, 300)
 
   });
 
-  it('should be able to calculate the total number of visitors per year');
+  it('should be able to calculate the total number of visitors per year', function () {
+    park.addDinosaur(dinosaurTrex)
+    park.addDinosaur(dinosaurPelsarus)
+    park.addDinosaur(dinosaurTrex02)
+    park.addDinosaur(dinosaurTrex03)    
+    perYearValue = park.totalVisitorPerDay() * 365
+    assert.strictEqual(perYearValue, 109500)
+
+  });
 
   it('should be able to calculate total revenue for one year');
 
