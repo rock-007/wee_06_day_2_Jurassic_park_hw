@@ -93,5 +93,15 @@ describe('Park', function() {
     assert.strictEqual(perYearRevenue, 6570000)
 
   });
+  it('Remove all dinosaurs of a particular species', function () {
+    park.addDinosaur(dinosaurTrex)
+    park.addDinosaur(dinosaurPelsarus)
+    park.addDinosaur(dinosaurTrex02)
+    park.addDinosaur(dinosaurTrex03)
+    value = park.dinosaurCollection.length    
+    park.removeSpecies('T-rex')
+    assert.strictEqual(value-3, 1)
+
+  });
 
 });

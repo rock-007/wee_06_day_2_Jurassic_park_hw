@@ -59,6 +59,18 @@ Park.prototype.searchSpecies = function (species){
 
 }
 
+Park.prototype.removeSpecies = function (species){
+    let tempCopy = this.dinosaurCollection
+
+    for (let i=0; i<tempCopy.length; i++){
+        if (tempCopy[i].species === species){
+            this.dinosaurCollection.splice(i,1)
+        }
+    }
+
+
+}
+
 Park.prototype.totalVisitorPerDay = function () {
     totalVisitors = 0;
     for (dinosaur of this.dinosaurCollection){
