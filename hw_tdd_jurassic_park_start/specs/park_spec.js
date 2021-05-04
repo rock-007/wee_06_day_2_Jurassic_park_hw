@@ -11,6 +11,8 @@ describe('Park', function() {
     dinosaurTrex02 = new Dinosaur('T-rex', "carnivorus", 70)
     dinosaurTrex03 = new Dinosaur('T-rex', "carnivorus", 70)
     dinosaurTrex04 = new Dinosaur('T-rex', "carnivorus", 70)
+    dinosaurSpino01 = new Dinosaur('Spinosaurus', "carnivorus", 70)
+    dinosaurStaga01 = new Dinosaur('Stagasorus', "herbivorus", 70)
 
   });
 
@@ -103,5 +105,16 @@ describe('Park', function() {
     assert.strictEqual(value-3, 1)
 
   });
+  it('diet types and the number of dinosaurs in the park', function () {
+    park.addDinosaur(dinosaurTrex)
+    park.addDinosaur(dinosaurPelsarus)
+    park.addDinosaur(dinosaurTrex02)
+    park.addDinosaur(dinosaurTrex03)
+    park.addDinosaur(dinosaurTrex04)
+    park.addDinosaur(dinosaurSpino01)
+    park.addDinosaur(dinosaurStaga01)
+    value = park.searchDietTypes()
+    assert.deepStrictEqual(value, { 'carnivore': 5, 'herbivore': 1, 'omnivore': 1 })
+  })
 
 });

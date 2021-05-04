@@ -79,4 +79,27 @@ Park.prototype.totalVisitorPerDay = function () {
 return totalVisitors
 };
 
+Park.prototype.searchDietTypes = function () {
+    dianosaurDietType = {'carnivore': 0, 'herbivore': 0, 'omnivore': 0 }
+
+    for ( dinosaur of this.dinosaurCollection){
+
+        switch (dinosaur.diet){
+            case 'carnivorus':
+                dianosaurDietType.carnivore = dianosaurDietType.carnivore +1
+                break;
+            case 'herbivorus':
+                dianosaurDietType.herbivore = dianosaurDietType.herbivore + 1
+                break;
+            case 'omnivorus':
+                dianosaurDietType.omnivore = dianosaurDietType.omnivore +1
+                break;
+        }
+
+    }
+    return dianosaurDietType;
+
+}
+
+
 module.exports = Park;
