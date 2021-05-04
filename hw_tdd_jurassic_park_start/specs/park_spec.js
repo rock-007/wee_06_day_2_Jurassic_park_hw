@@ -60,10 +60,18 @@ describe('Park', function() {
     park.addDinosaur(dinosaurTrex02)
     park.addDinosaur(dinosaurTrex03)
     speciesCollection = park.searchSpecies('T-rex')
-    assert.deepStrictEqual(speciesCollection.length,3)
+    assert.strictEqual(speciesCollection.length,3)
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function (){
+    park.addDinosaur(dinosaurTrex)
+    park.addDinosaur(dinosaurPelsarus)
+    park.addDinosaur(dinosaurTrex02)
+    park.addDinosaur(dinosaurTrex03)    
+    value = park.totalVisitorPerDay()
+    assert.strictEqual(value, 300)
+
+  });
 
   it('should be able to calculate the total number of visitors per year');
 
