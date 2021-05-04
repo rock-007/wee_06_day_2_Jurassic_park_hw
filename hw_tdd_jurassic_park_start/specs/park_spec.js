@@ -68,8 +68,8 @@ describe('Park', function() {
     park.addDinosaur(dinosaurPelsarus)
     park.addDinosaur(dinosaurTrex02)
     park.addDinosaur(dinosaurTrex03)    
-    perDayValue = park.totalVisitorPerDay()
-    assert.strictEqual(perDayValue, 300)
+    perDayVisits = park.totalVisitorPerDay()
+    assert.strictEqual(perDayVisits, 300)
 
   });
 
@@ -78,11 +78,20 @@ describe('Park', function() {
     park.addDinosaur(dinosaurPelsarus)
     park.addDinosaur(dinosaurTrex02)
     park.addDinosaur(dinosaurTrex03)    
-    perYearValue = park.totalVisitorPerDay() * 365
-    assert.strictEqual(perYearValue, 109500)
+    perYearVisits = park.totalVisitorPerDay() * 365
+    assert.strictEqual(perYearVisits, 109500)
 
   });
 
-  it('should be able to calculate total revenue for one year');
+  it('should be able to calculate total revenue for one year', function () {
+    park.addDinosaur(dinosaurTrex)
+    park.addDinosaur(dinosaurPelsarus)
+    park.addDinosaur(dinosaurTrex02)
+    park.addDinosaur(dinosaurTrex03)    
+    perYearVisits = park.totalVisitorPerDay() * 365
+    perYearRevenue = perYearVisits * park.ticketPrice 
+    assert.strictEqual(perYearRevenue, 6570000)
+
+  });
 
 });
